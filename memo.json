@@ -1,0 +1,55 @@
+{
+  "verdict": "STRONG",
+  "verdict_reason": "The candidate list offers actionable options ranging from premier festival launchpads to open genre distribution channels suitable for an unreleased micro-budget thriller.",
+  "ranked_candidates": [
+    {
+      "name": "SXSW Film & TV Festival",
+      "url": "https://sxsw.com/festivals/film-tv-festival",
+      "fit_reason": "SXSW is a premier launchpad for independent features and world premieres, offering dedicated sections like Midnighter, Visions, and Narrative Feature Competition that suit a 92-minute psychological thriller.",
+      "action_needed": "Submit the film for world premiere consideration via the SXSW online application before the final deadline."
+    },
+    {
+      "name": "Scream Team Releasing",
+      "url": "https://screamteamreleasing.com/pages/submit-your-film",
+      "fit_reason": "Actively accepts submissions for completed indie features over 70 minutes across horror, thriller, and dark drama genres for physical and digital distribution.",
+      "action_needed": "Submit the completed film, screener link, password, and trailer via their online intake form."
+    },
+    {
+      "name": "Thriller/Suspense Festival",
+      "url": "https://filmfreeway.com/ThrillerSuspenseFestival",
+      "fit_reason": "A genre-focused monthly hybrid festival dedicated specifically to thriller and suspense feature films, offering audience feedback videos and promotional interviews.",
+      "action_needed": "Submit the feature on FilmFreeway under the THRILLER Feature Film category before the final deadline."
+    },
+    {
+      "name": "Greenwich Entertainment",
+      "url": "https://greenwichentertainment.com/",
+      "fit_reason": "An active independent feature distributor that provides a direct, open email address specifically for acquisitions inquiries.",
+      "action_needed": "Send a professional query letter and screener link directly to acquisitions@greenwichentertainment.com."
+    },
+    {
+      "name": "Cinema Libre Studio",
+      "url": "https://www.cinemalibrestudio.com/",
+      "fit_reason": "Maintains active domestic distribution and international sales pathways for independent narrative features, though their focus leans heavily toward social issue topics.",
+      "action_needed": "Submit an acquisition inquiry highlighting any thematic depth or social resonance in the thriller."
+    },
+    {
+      "name": "Magnolia Pictures",
+      "url": "https://www.magnoliapictures.com/",
+      "fit_reason": "A major independent distributor with a history of genre acquisitions via Magnet, though the extracted text provides minimal details on direct submission policies.",
+      "action_needed": "Attempt contact via acquisitions outreach or seek rep introduction during festival screenings."
+    },
+    {
+      "name": "Vertical (formerly Vertical Entertainment)",
+      "url": "https://www.vert-ent.com/",
+      "fit_reason": "Distributes independent thrillers, but the provided listing contains minimal web data and lacks any documented open submission pathway.",
+      "action_needed": "Target through an established sales agent or producer representative rather than cold outreach."
+    },
+    {
+      "name": "Saban Films",
+      "url": "https://www.sabanfilms.com/",
+      "fit_reason": "Distributes features but explicitly states a strict corporate policy against accepting or considering unsolicited materials.",
+      "action_needed": "Do not submit unsolicited materials directly; route exclusively through a licensed talent agent or entertainment attorney."
+    }
+  ],
+  "recommendation": "Prioritize submitting to SXSW to secure a high-profile world premiere for your micro-budget psychological thriller. Simultaneously, submit to open genre outlets like Scream Team Releasing and query Greenwich Entertainment's acquisitions desk. Avoid sending unsolicited materials directly to Saban Films to prevent policy rejections."
+}

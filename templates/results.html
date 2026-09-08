@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launch Radar - Strategy Memo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="wordmark">Launch Radar</a>
+        <div class="nav-links">
+            <a href="/how-it-works" class="nav-link">How it Works</a>
+        </div>
+    </nav>
+
+    <div class="container fade-in">
+        <main id="main-content">
+            
+            <div class="verdict-header">
+                <h1 class="verdict-title">
+                    Overall Verdict: 
+                    <span class="verdict-status {{ memo.verdict | lower }}">{{ memo.verdict }}</span>
+                </h1>
+                <p class="verdict-reason serif">"{{ memo.verdict_reason }}"</p>
+            </div>
+
+            <p class="recommendation">{{ memo.recommendation }}</p>
+
+            <h2 style="font-size: 2rem; margin-bottom: 1rem;">Candidate Roster</h2>
+            
+            <div class="candidate-list">
+                {% for candidate in memo.ranked_candidates %}
+                <div class="candidate-entry {% if loop.index == 1 %}top-ranked{% endif %}">
+                    <div class="entry-header">
+                        <h3 class="entry-title">
+                            <span class="entry-rank">{{ "%02d" | format(loop.index) }}</span>
+                            {{ candidate.name }}
+                        </h3>
+                        <a href="{{ candidate.url }}" target="_blank" class="entry-link">View Platform</a>
+                    </div>
+                    
+                    <div class="divider"></div>
+                    
+                    <div class="entry-details">
+                        <div class="detail-block">
+                            <span class="detail-label">Fit Analysis</span>
+                            <p>{{ candidate.fit_reason }}</p>
+                        </div>
+                        <div class="detail-block">
+                            <span class="detail-label">Action Required</span>
+                            <p>{{ candidate.action_needed }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                <div class="candidate-entry">
+                    <p>No candidates found matching the criteria.</p>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+                <a href="/" class="btn primary-btn" style="width: auto;">Run Another Analysis</a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

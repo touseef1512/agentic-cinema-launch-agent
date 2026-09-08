@@ -3,3 +3,4 @@
 __pycache__/
 *.pyc
 pipeline_data.json
+.env

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Launch Radar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="wordmark">Launch Radar</a>
+        <div class="nav-links">
+            <a href="/how-it-works" class="nav-link">How it Works</a>
+        </div>
+    </nav>
+
+    <div class="hero-bg">
+        <div class="container fade-in">
+            <main id="main-content">
+                <div id="form-section">
+                    <h1>Strategy Setup</h1>
+                    <p class="intro">For filmmakers who have wrapped production. Find exactly where to submit, premiere, and sell your indie film based on real, currently active data.</p>
+                    
+                    <form id="strategy-form" class="form-container">
+                        <div class="form-group">
+                            <label for="genre">Genre</label>
+                            <input type="text" id="genre" name="genre" placeholder="e.g. psychological thriller" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="runtime_minutes">Runtime (minutes)</label>
+                            <input type="number" id="runtime_minutes" name="runtime_minutes" placeholder="e.g. 92" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="budget_tier">Budget Tier</label>
+                            <input type="text" id="budget_tier" name="budget_tier" placeholder="e.g. micro-budget (under $500k)" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="festival_pedigree">Festival Pedigree</label>
+                            <input type="text" id="festival_pedigree" name="festival_pedigree" placeholder="e.g. world premiere, no prior festival history" required>
+                        </div>
+
+                        <button type="submit" class="btn primary-btn">Generate Strategy</button>
+                    </form>
+                </div>
+
+                <div id="loading-section" class="hidden loading-section">
+                    <h2 class="loading-text">Analyzing Landscape...</h2>
+                    <p class="loading-subtext">Scouring the web for active festivals and distributors, extracting submission criteria, and synthesizing a strategy memo. This takes a few minutes.</p>
+                </div>
+                
+                <div id="error-section" class="hidden error-section">
+                    <h2>Error</h2>
+                    <p id="error-message"></p>
+                    <br>
+                    <button onclick="location.reload()" class="btn">Return</button>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('strategy-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            document.getElementById('form-section').classList.add('hidden');
+            document.getElementById('loading-section').classList.remove('hidden');
+            
+            const formData = new FormData(e.target);
+            
+            try {
+                const response = await fetch('/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                if (data.error) {
+                    showError(data.error);
+                    return;
+                }
+                
+                pollStatus(data.job_id);
+                
+            } catch (err) {
+                showError('Failed to connect to server.');
+            }
+        });
+
+        async function pollStatus(jobId) {
+            try {
+                const response = await fetch(`/status/${jobId}`);
+                const data = await response.json();
+                
+                if (data.status === 'completed') {
+                    window.location.href = `/results/${jobId}`;
+                } else if (data.status === 'error') {
+                    showError('An error occurred during pipeline execution.');
+                } else {
+                    setTimeout(() => pollStatus(jobId), 5000);
+                }
+            } catch (err) {
+                showError('Lost connection while polling server.');
+            }
+        }
+        
+        function showError(msg) {
+            document.getElementById('loading-section').classList.add('hidden');
+            document.getElementById('error-section').classList.remove('hidden');
+            document.getElementById('error-message').textContent = msg;
+        }
+    </script>
+</body>
+</html>
