@@ -3,67 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Launch Radar - Strategy Memo</title>
+    <title>Launch Radar — Strategy Memo</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <nav class="navbar">
-        <a href="/" class="wordmark">Launch Radar</a>
-        <div class="nav-links">
-            <a href="/how-it-works" class="nav-link">How it Works</a>
-        </div>
+<div class="page fade-in">
+
+    <nav class="nav">
+        <a href="/" class="nav-wordmark">Launch Radar</a>
+        <a href="/how-it-works" class="nav-link">How it Works</a>
     </nav>
 
-    <div class="container fade-in">
-        <main id="main-content">
-            
-            <div class="verdict-header">
-                <h1 class="verdict-title">
-                    Overall Verdict: 
-                    <span class="verdict-status {{ memo.verdict | lower }}">{{ memo.verdict }}</span>
-                </h1>
-                <p class="verdict-reason serif">"{{ memo.verdict_reason }}"</p>
-            </div>
+    <div class="wrap">
 
-            <p class="recommendation">{{ memo.recommendation }}</p>
+        <header class="results-header">
+            <p class="verdict-label">Overall verdict</p>
+            <h1 class="verdict-value">
+                <span class="{{ memo.verdict | lower }}">{{ memo.verdict }}</span>
+            </h1>
+            <p class="verdict-reason">"{{ memo.verdict_reason }}"</p>
+        </header>
 
-            <h2 style="font-size: 2rem; margin-bottom: 1rem;">Candidate Roster</h2>
-            
-            <div class="candidate-list">
-                {% for candidate in memo.ranked_candidates %}
-                <div class="candidate-entry {% if loop.index == 1 %}top-ranked{% endif %}">
-                    <div class="entry-header">
-                        <h3 class="entry-title">
-                            <span class="entry-rank">{{ "%02d" | format(loop.index) }}</span>
-                            {{ candidate.name }}
-                        </h3>
-                        <a href="{{ candidate.url }}" target="_blank" class="entry-link">View Platform</a>
-                    </div>
-                    
-                    <div class="divider"></div>
-                    
-                    <div class="entry-details">
-                        <div class="detail-block">
-                            <span class="detail-label">Fit Analysis</span>
-                            <p>{{ candidate.fit_reason }}</p>
-                        </div>
-                        <div class="detail-block">
-                            <span class="detail-label">Action Required</span>
-                            <p>{{ candidate.action_needed }}</p>
-                        </div>
-                    </div>
+        <section class="recommendation">{{ memo.recommendation }}</section>
+
+        <h2 class="candidates-heading">Ranked candidates</h2>
+
+        {% for candidate in memo.ranked_candidates %}
+        <article class="candidate rank-{{ loop.index }}">
+            <div class="candidate-top">
+                <div>
+                    <span class="candidate-rank">{{ "%02d" | format(loop.index) }}</span>
+                    <span class="candidate-name">{{ candidate.name }}</span>
                 </div>
-                {% else %}
-                <div class="candidate-entry">
-                    <p>No candidates found matching the criteria.</p>
+                <a href="{{ candidate.url }}" target="_blank" class="candidate-link">Visit site</a>
+            </div>
+            <div class="candidate-details">
+                <div>
+                    <span class="detail-heading">Why it fits</span>
+                    <p>{{ candidate.fit_reason }}</p>
                 </div>
-                {% endfor %}
+                <div>
+                    <span class="detail-heading">Action needed</span>
+                    <p>{{ candidate.action_needed }}</p>
+                </div>
             </div>
-            
-            <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
-                <a href="/" class="btn primary-btn" style="width: auto;">Run Another Analysis</a>
-            </div>
-        </main>
+        </article>
+        {% else %}
+        <p style="color: var(--muted); padding: 2rem 0;">No candidates matched the criteria.</p>
+        {% endfor %}
+
+        <div class="page-footer">
+            <a href="/" class="back-link">&larr; Run another analysis</a>
+        </div>
+
     </div>
+
+</div>
 </body>
 </html>

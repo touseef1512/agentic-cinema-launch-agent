@@ -3,69 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Launch Radar - How it Works</title>
+    <title>Launch Radar — How it Works</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <nav class="navbar">
-        <a href="/" class="wordmark">Launch Radar</a>
-        <div class="nav-links">
-            <a href="/how-it-works" class="nav-link active">How it Works</a>
-        </div>
+<div class="page">
+
+    <nav class="nav">
+        <a href="/" class="nav-wordmark">Launch Radar</a>
+        <a href="/how-it-works" class="nav-link active">How it Works</a>
     </nav>
 
-    <div class="container fade-in">
-        <main id="main-content">
-            <div style="margin-bottom: 4rem;">
-                <h1>How it Works</h1>
-                <p class="intro">Launch Radar runs a 3-step autonomous pipeline to build your release strategy. Every recommendation is traceable to real, currently-active web data—not invented by an AI.</p>
-            </div>
+    <div class="wrap">
 
-            <div class="candidate-list">
-                <div class="candidate-entry top-ranked">
-                    <div class="entry-header">
-                        <h3 class="entry-title">
-                            <span class="entry-rank">01</span>
-                            Search & Discovery
-                        </h3>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="entry-details">
-                        <p>We query the web for active festivals, distribution companies, and sales agents currently accepting submissions for your specific genre and budget tier.</p>
-                    </div>
-                </div>
+        <section class="hero" style="padding-bottom: 0;">
+            <h1>Three steps, real data.</h1>
+            <p class="hero-sub">Every recommendation traces back to information extracted from actual websites — nothing is invented.</p>
+        </section>
 
-                <div class="candidate-entry">
-                    <div class="entry-header">
-                        <h3 class="entry-title">
-                            <span class="entry-rank">02</span>
-                            Find All & Extract
-                        </h3>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="entry-details">
-                        <p>We crawl the top results to extract real, unstructured submission criteria, deadlines, and contact information directly off each candidate's website.</p>
-                    </div>
-                </div>
+        <section class="steps">
 
-                <div class="candidate-entry">
-                    <div class="entry-header">
-                        <h3 class="entry-title">
-                            <span class="entry-rank">03</span>
-                            Gemini Synthesis
-                        </h3>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="entry-details">
-                        <p>A specialized Gemini agent acting as a distribution strategist cross-references your film's profile against the extracted web data. It returns a fully ranked strategy memo detailing exact fit reasons and the actions required.</p>
-                    </div>
+            <div class="step">
+                <span class="step-num">1</span>
+                <div>
+                    <h3>Search &amp; Discovery</h3>
+                    <p>We query the web for festivals, sales agents, and distributors currently accepting submissions for your genre and budget tier.</p>
                 </div>
             </div>
 
-            <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-color); text-align: center;">
-                <a href="/" class="btn primary-btn" style="width: auto;">Start Your Strategy</a>
+            <div class="step">
+                <span class="step-num">2</span>
+                <div>
+                    <h3>Find All &amp; Extract</h3>
+                    <p>We crawl each candidate's site to pull real submission criteria, deadlines, fees, and contact details — structured data, not summaries.</p>
+                </div>
             </div>
-        </main>
+
+            <div class="step">
+                <span class="step-num">3</span>
+                <div>
+                    <h3>Gemini Synthesis</h3>
+                    <p>A Gemini agent cross-references your film's profile against the extracted data and returns a ranked strategy memo with fit reasons and next actions.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <div class="page-footer">
+            <a href="/" class="back-link">&larr; Start your strategy</a>
+        </div>
+
     </div>
+
+</div>
 </body>
 </html>
