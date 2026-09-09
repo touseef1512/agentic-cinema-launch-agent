@@ -48,8 +48,10 @@
         </section>
 
         <section id="loading-section" class="hidden loading-state">
+            <div class="spinner"></div>
             <h2>Analyzing landscape&hellip;</h2>
-            <p>Scanning active festivals and distributors, extracting submission criteria, and building your strategy memo. This usually takes a few minutes.</p>
+            <p id="loading-status" style="font-weight: 500; margin-bottom: 0.5rem; color: var(--gold);">Searching for active festivals and distributors&hellip;</p>
+            <p>This usually takes a few minutes.</p>
         </section>
 
         <section id="error-section" class="hidden error-state">
@@ -71,6 +73,7 @@ document.getElementById('strategy-form').addEventListener('submit', async (e) =>
 
     const formData = new FormData(e.target);
     try {
+        startStatusCycle();
         const res = await fetch('/submit', { method: 'POST', body: formData });
         const data = await res.json();
         if (data.error) { showError(data.error); return; }
@@ -85,6 +88,7 @@ async function pollStatus(jobId) {
         const res = await fetch(`/status/${jobId}`);
         const data = await res.json();
         if (data.status === 'completed') {
+            if (window.statusInterval) clearInterval(window.statusInterval);
             window.location.href = `/results/${jobId}`;
         } else if (data.status === 'error') {
             showError('Pipeline encountered an error.');
@@ -100,6 +104,24 @@ function showError(msg) {
     document.getElementById('loading-section').classList.add('hidden');
     document.getElementById('error-section').classList.remove('hidden');
     document.getElementById('error-message').textContent = msg;
+    if (window.statusInterval) clearInterval(window.statusInterval);
+}
+
+function startStatusCycle() {
+    const messages = [
+        'Searching for active festivals and distributors&hellip;',
+        'Building a structured shortlist&hellip;',
+        'Extracting real submission criteria from each site&hellip;',
+        'Synthesizing your ranked strategy memo&hellip;'
+    ];
+    let index = 0;
+    const statusElement = document.getElementById('loading-status');
+    
+    if (window.statusInterval) clearInterval(window.statusInterval);
+    window.statusInterval = setInterval(() => {
+        index = (index + 1) % messages.length;
+        statusElement.innerHTML = messages[index];
+    }, 4500);
 }
 </script>
 </body>

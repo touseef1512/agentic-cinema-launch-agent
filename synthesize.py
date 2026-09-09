@@ -30,6 +30,7 @@ def run_synthesize(pipeline_data):
         "Rank the provided candidates by genuine fit for the film's profile. "
         "Every claim in your output must be traceable to the actual extracted_info or description provided in the candidates list. "
         "Do not invent details. If a candidate's data is thin, state that honestly. "
+        "If a candidate's extracted_info contains an official 'Website:' field (e.g. from a LinkedIn page), you MUST use THAT official website URL as the candidate's 'url' field in the output, instead of the original input url. "
         "You must output valid JSON matching the requested schema."
     )
 
