@@ -12,6 +12,10 @@ load_dotenv()
 app = Flask(__name__)
 app.secret_key = os.environ.get("FLASK_SECRET_KEY", "agentic-cinema-secret")
 
+@app.route('/health')
+def health():
+    return 'ok', 200
+
 # In-memory store for background jobs
 # Structure: { job_id: {"status": "running"|"completed"|"error", "memo": {...}, "error": "..."} }
 jobs = {}
