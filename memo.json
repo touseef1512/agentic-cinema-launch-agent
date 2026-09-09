@@ -1,19 +1,55 @@
 {
-  "verdict": "MODERATE",
-  "verdict_reason": "Both festivals provide viable submission paths for an unheralded micro-budget psychological thriller, featuring dedicated genre strands and independent film exposure.",
+  "verdict": "STRONG",
+  "verdict_reason": "The pool contains several highly aligned distribution platforms and festivals specifically geared toward completed, low-budget indie dramedies seeking global exposure without prior festival history.",
   "ranked_candidates": [
     {
-      "name": "CineWyre Film Festival",
-      "url": "https://cwfilmfest.com/",
-      "fit_reason": "Features a dedicated Horror/Thriller strand that directly aligns with a psychological thriller seeking a world premiere platform.",
-      "action_needed": "Submit the 92-minute feature screener directly to the Horror/Thriller category for their 2025 festival edition."
+      "name": "Indie Rights",
+      "url": "https://www.indierights.com/distribution",
+      "fit_reason": "Indie Rights explicitly caters to independent features that lack top-tier festival pedigree, offering non-exclusive 80% revenue share distribution across major global platforms (TVOD/AVOD/SVOD) with no upfront expenses. Their catalog includes comedy and drama, aligning seamlessly with a low-budget coming-of-age dramedy.",
+      "action_needed": "Submit the completed feature and screener link through the Google Form on their distribution page for consideration."
     },
     {
-      "name": "Boston Film Festival",
-      "url": "http://www.bostonfilmfestival.org",
-      "fit_reason": "An established festival operating since 1984 that supports emerging filmmakers and independent voices.",
-      "action_needed": "Check submission deadlines and guidelines on their website to submit the film for narrative feature consideration."
+      "name": "I AM EIGA",
+      "url": "https://iam-eiga.com/",
+      "fit_reason": "Based in Brooklyn, I AM EIGA is a curated member-led platform and pitch-room system connecting indie filmmakers directly with acquisitions professionals, festival programmers, and cinephiles. It provides strong discovery and potential acquisition opportunities without requiring prior festival accolades.",
+      "action_needed": "Create a filmmaker profile and submit the 105-minute feature through the platform's portal for a 14-day review."
+    },
+    {
+      "name": "Los Angeles Indie Film Festival",
+      "url": "https://www.lafilmfestivals.com/la-indie-film-fest",
+      "fit_reason": "This Los Angeles festival explicitly accepts feature-length submissions in any genre up to 120 minutes (fitting your 105-minute runtime), providing physical screening opportunities and industry networking for unreleased indie films.",
+      "action_needed": "Submit an active screener link with password and complete the entry form on their website."
+    },
+    {
+      "name": "LBR Film Distribution",
+      "url": "https://lbrfilmdistribution.com/submit",
+      "fit_reason": "LBR Film Distribution accepts completed feature films across multiple genres including drama and comedy via an online submission form, making it a viable general distribution avenue for an unrepresented indie feature.",
+      "action_needed": "Fill out their submission form with logline, synopsis, cast credits, and a secure 30-day active screener link."
+    },
+    {
+      "name": "FABA Films",
+      "url": "https://www.fabafilms.com/",
+      "fit_reason": "FABA Films offers artist-driven self-distribution and festival streaming options where filmmakers retain 100% of ad revenue, serving as a solid fallback option for independent feature projects.",
+      "action_needed": "Submit an inquiry via their contact and submission form to explore non-exclusive self-distribution."
+    },
+    {
+      "name": "Invincible Entertainment",
+      "url": "https://www.invincibleent.com/",
+      "fit_reason": "Invincible accepts submissions via Direct Acquisition and Distribution as a Service programs, though available details regarding genre preferences and acquisition criteria remain limited.",
+      "action_needed": "Review their acquisition submission guidelines on the official site and reach out to their acquisitions desk."
+    },
+    {
+      "name": "Berlin International Film Festival (Berlinale)",
+      "url": "https://www.berlinale.de/",
+      "fit_reason": "Berlinale is an A-list tier festival requiring high processing fees (\u20ac175) and currently notes ambiguity around entry submissions; it is generally an unrealistic launchpad for an unheralded low-budget feature with zero festival history.",
+      "action_needed": "Monitor official festival submission announcements before committing application fees."
+    },
+    {
+      "name": "Van Cleve Films",
+      "url": "https://vanclevefilms.com/",
+      "fit_reason": "While Van Cleve offers flat-fee non-exclusive distribution for indie films, its current explicit intake focus is restricted to reality television programming.",
+      "action_needed": "Hold off on submitting narrative feature projects until narrative film submissions reopen."
     }
   ],
-  "recommendation": "Prioritize CineWyre Film Festival for its tailored Horror/Thriller program, which increases acceptance odds for a micro-budget genre premiere. Submit to Boston Film Festival in tandem to pursue broader independent film industry visibility and festival credentials. Ensure screener links emphasize the complete 92-minute narrative cut."
+  "recommendation": "Prioritize submitting directly to Indie Rights and I AM EIGA for direct distributor contact and platform discovery without relying on a costly festival run. Concurrently, submit to regional independent festivals like the Los Angeles Indie Film Festival to build initial exposure and local festival pedigree. Avoid spending submission fees on top-tier competitive international festivals like Berlinale at this stage."
 }

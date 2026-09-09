@@ -101,10 +101,10 @@ def run_pipeline(film_data):
 
 if __name__ == "__main__":
     FILM = {
-        "genre": "psychological thriller",
-        "runtime_minutes": 92,
-        "budget_tier": "micro-budget (under $500k)",
-        "festival_pedigree": "world premiere, no prior festival history",
+        "genre": "coming-of-age indie dramedy",
+        "runtime_minutes": 105,
+        "budget_tier": "low-budget ($50K–$500K)",
+        "festival_pedigree": "no prior festival history",
     }
     data = run_pipeline(FILM)
     with open("pipeline_data.json", "w") as f:
